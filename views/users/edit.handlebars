@@ -1,0 +1,31 @@
+<h1>Editar usuário</h1>
+<div class="card">
+    <div class="card-body">
+        <form action="/users/new" method="POST">
+            <div class="form-group">
+                <label for="username">Nome de Usuário:</label>
+                <input type="text" name="username" class="form-control" value="{{user.username}}">  
+            </div>
+            <div class="form-group">
+                <label for="name">Nome Completo:</label>
+                <input type="text" name="name" class="form-control" value="{{user.name}}">
+            </div>
+            <div class="form-group">
+                <label for="email">E-mail:</label>
+                <input type="email" name="email" class="form-control" value="{{user.email}}">
+            </div>
+            <div class="form-group">
+                <label for="password">Senha:</label>
+                <input type="password" name="password" class="form-control">   
+            </div>
+            <div class="form-group">
+                <label for="repeat-password">Repetir senha:</label>
+                <input type="password" name="repeat-password" class="form-control">  
+            </div>
+            <div class="form-group">        
+            <button type="submit" class="btn btn-success mt-3">Editar Usuário</button>
+        </form>      
+        <br>
+        <a href="/users" class="btn btn-secondary mt-2">Voltar</a>  
+    </div>
+</div>

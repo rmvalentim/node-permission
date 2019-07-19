@@ -1,0 +1,41 @@
+<h1>Visualização de usuário</h1>
+<div class="card">
+    <div class="card-body">
+        <span class="font-weight-bold">Id:</span> {{user.id}}
+        <br>
+        <span class="font-weight-bold">Nome de Usuário:</span> {{user.username}}
+        <br>
+        <span class="font-weight-bold">Nome Completo:</span> {{user.name}}
+        <br>
+        <span class="font-weight-bold">E-mail:</span> {{user.email}}
+        <br>
+        <a href="/users" class="btn btn-secondary mt-2">Voltar</a>
+        <br>
+        <button type="button" class="btn btn-danger mt-2" data-toggle="modal" data-target="#exampleModal">
+        Excluir usuário
+        </button>
+    </div>    
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="ModalLabel">Atenção!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Deseja realmente excluir o usuário: <span class="font-weight-bold">{{user.username}}</span> ?
+      </div>
+      <div class="modal-footer">
+        <form action="/users/delete/{{user.id}}" method="POST">
+            <button type="submit" class="btn btn-danger">Excluir</button>
+        </form>        
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
+      </div>
+    </div>
+  </div>
+</div>
